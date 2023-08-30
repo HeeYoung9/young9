@@ -1,0 +1,56 @@
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert.jsp</title>
+</head>
+<body>
+
+<h1> insert.jsp (SQL구문 실행) </h1>
+
+<%
+	//0. 드라이버(라이브러리) 설치 (프로젝트당 한번만)
+	
+	// 디비연결 정보 (상수)
+	final String DRIVER = "com.mysql.cj.jdbc.Driver";
+	//final 상수 : 절대로 변하지 않는 값./ 상수는 이름을 대문자로 작성 (전부다!)
+	final String DBURL = "jdbc:mysql://localhost:3306/jspdb";
+	final String DBID = "root";
+	final String DBPW = "1234";
+	
+	
+	//1. 드라이버 로드 (페이지 마다)
+	Class.forName("com.mysql.cj.jdbc.Driver"); //DRIVER로 입력 가능
+	System.out.println("드라이버 로드 성공!");
+	
+	//2. 디비 연결
+	Connection con =
+	DriverManager.getConnection("jdbc:mysql://localhost:3306/jspdb", "root", "1234");
+	System.out.println("디비 연결성공! ");
+	System.out.println("con: "+con);
+	
+	//3. sql 구문 작성 & stmt 객체 생성
+	//statement: SQL 구문을 실행하게 하는 객체
+	Statement stmt = con.createStatement();
+	
+	//sql구문에는 ;(세미콜론) 제거해야함.
+	String sql = 
+	"insert into itwill_member(idx, name, gender, age, jumin) values(null, '윌윌윌', 'M', 29, '125556-1111112')";
+	
+	//4. sql 실행
+	stmt.executeUpdate(sql);
+	
+	System.out.println("정상 실행 완료");
+
+
+	
+%>
+
+
+</body>
+</html>

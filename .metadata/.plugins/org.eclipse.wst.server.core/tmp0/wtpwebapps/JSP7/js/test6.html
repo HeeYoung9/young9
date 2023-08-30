@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>test6.html</h1>
+
+    <h1> 객체: 모든 대상 </h1>
+    <p>
+        객체 추상화: 코드로 표현하려고하는 대상을 선택해서 속성, 동작들을 정의<br>
+        ex)'모니터'<br>
+            속성: 브랜드, 모델명, 크기, 색상, 가격, 화소, ....<br>
+            동작: 전원 on/off, 명도조절, 음량조절, ....<br>
+        객체 생성(인스턴스): 추상화 했던 객체정보를 실제 구현<br>
+        
+        *인스턴스화(=붕어빵을 굽는다)<br>
+         => 객체를 메모리에 올리는 작업 (객체를 메모리에 올려야지 실제로 쓸수있음)<br>
+         
+        var 참조변수 = new 객체명();<br>
+        
+    </p>
+
+    <script>
+        //객체생성
+        //var obj = new Object();
+        var TV = new Object(); //tv 한대 만들었다~
+        // 위에 있는 코드중에 Object()는 함수이면서 객체 생성자(속성,동작)
+        // Object()가 속성과 동작을 모두 사용할수있도록 셋팅해줌
+        //TV객체의 속성 필요: 크기, 색상, 가격
+        TV.size = 100;
+        TV.color = "black";
+        TV.price = 200;
+        //TV.power = "off";
+        TV.power = false; //티비 꺼짐
+
+        document.write("생성한 티비의 정보 출력<hr>")
+    
+        //+티비 정보를 조회하는 동작
+        function showTvInfo(){
+            document.write("크기: "+TV.size+"인치<br>")
+            document.write("색상: "+TV.color+"<br>")
+            document.write("가격: "+TV.size+"만원<hr>")
+            document.write("전원: "+(TV.power? "on":"off")+"<hr>")
+        }
+        
+        showTvInfo();
+        
+        TV.showTvInfo = function showTvInfo(){
+            document.write("크기: "+TV.size+"인치<br>")
+            document.write("색상: "+TV.color+"<br>")
+            document.write("가격: "+TV.size+"만원<hr>")
+        }
+        //TV객체의 동작 필요: 전원on/off, 채널변경, 음량조절
+
+        //전원on/off - 한번 실행 on/off
+        // 한번 누르면 on->off , 또 한번누르면 off->on
+        // 티비 파워정보 가져오기 (true/false)
+        TV.onOff = function(){
+            if(TV.power){
+                TV.power=!TV.power; //만약 이 문이 실행되면 전원 on(true)상태임
+                document.write("티비꺼짐<br>");
+            }else{
+                TV.power=!TV.power; //TV.power=ture로 적어도 됨.
+                document.write("티비켜짐<br>");
+            }
+        }
+        
+        TV.onOff();
+
+
+        //채널변경 동작
+        //1) 티비가 켜진 상태 필요(꺼진상태면 동작x)
+        //2) 기본 채널 10번 (티비 켰을때 10번)
+        //3) 채널 up()/ 채널 down() 각각 채널을 1씩 증가, 감소
+        //   +채널정보출력
+        //4) chNum() - 번호를 직접 입력받아서 변경
+        //   +채널정보출력
+
+
+        TV.ch=10;
+
+        TV.chUp = function(){
+            if(TV.power){
+                TV.ch++;
+                document.write("티비채널"+TV.ch+"번<br>");
+            }
+        }
+        TV.chDown = function(){
+            if(TV.power){
+                TV.ch--;
+                document.write("티비채널"+TV.ch+"번<br>");
+            }
+        }
+
+        TV.chNum = function(number){
+            if(TV.power){
+                document.write("티비채널"+number+"번<br>");
+            }
+        }
+
+        TV.chUp();
+        TV.chDown();
+        TV.chDown();
+        TV.chNum(37);
+        TV.onOff();
+        TV.chUp();
+        TV.onOff();
+        TV.onOff();
+        TV.onOff();
+        TV.chUp();
+        
+
+        document.write("<hr>")
+        
+       
+        function tvCh(){
+            TV.no = 10;
+            if(TV.power){
+                var input=prompt("현재 채널: 10번, up/down");
+                if(input=="up"){
+                    TV.no++;
+                    document.write(TV.no+"번 채널로 이동<br>");
+                } else if(input=="down"){
+                    TV.no--;
+                    document.write(TV.no+"번 채널로 이동<br>");
+                }else{
+                    document.write(input+"번 채널로 이동<br>");
+                }
+            }
+        }  //내가 쓴 답인데, 문제는 함수호출을 할때마다 팝업창이 갯수만큼 뜨고, TV.no가 초기화됨.
+        //실행 가능성 낮음
+        document.write("<hr>")
+
+        //TV.power = false;
+        //TV.ch=10;
+        TV.upDown = function(String){
+            if(TV.power){
+                if(String=="up"){
+                    TV.ch++;
+                    document.write(TV.ch+"번 채널로 이동<br>");
+                }else if(String=="down"){
+                    TV.ch--;
+                    document.write(TV.ch+"번 채널로 이동<br>");
+                }
+            }
+            TV.num = function(number){
+                if(TV.power){
+                    document.write(number+"번 채널로 이동<br>");
+                }
+            }
+        } 
+          // 이 경우는 넘버 입력 가능한 함수를 따로 써야함.  
+        TV.upDown("down");
+        TV.upDown("down");
+        TV.upDown("down");
+        TV.upDown("down");
+        TV.upDown("down");
+        TV.upDown("up");
+        TV.num(60);
+    </script>
+
+    <h2>자바스크립트의 객체종류</h2>
+    <p>
+        1. 내장객체: 자바스크립트 안에 내장되어 있는 객체<br>
+           (문자, *날짜, 배열, 숫자,.... .)<br>
+        2. 브라우저 객체 모델(BOM): 브라우저에 내장되어있는 객체<br>
+        3. 문서 객체 모델(DOM): HTML문서 구조에 포함된 객체<br>
+    </p>
+    <h2>내장객체- 날짜(date)</h2>
+    <script>
+        //날짜(Date)객체 생성
+       var today = new Date();
+       document.write(today+"<br>"); //한국 기준으로 나오지 않음.
+       var day2 = new Date(2023,7,4); //년, 월-1, 일
+       // 월: 0~11월까지 표시(1~12월을 표시하고싶으면 -1해야 함.)
+       // 즉 8월을 쓰고싶으면 -1한 7로 표기해야함.
+       // 여기선 실제 월은 우리가 아는것보다 한개 적게 센다.
+       document.write(day2+"<br>");
+       var day3 = new Date(2023,7,4,9,32,0); //년,월-1, 일, 시, 분, 초
+        document.write(day3+"<br>");
+        var day4 = new Date("2023/8/4");
+        document.write(day4+"<br>");
+
+        //Date 객체 - 속성/동작
+        //2023년 8월 4일 로 출력하고싶음.
+        document.write(today.getFullYear()+"년 ");
+        //함수/메소드라고 적힌건 꼭 소괄호 해줘야함!!
+        document.write(today.getMonth()+1+"월 "); //+1 해주면 8월 나옴
+        document.write(today.getDate()+"일 <br>");
+        //date: 1~31일까지 표기 , day: 0~6일까지 일주일 표기
+
+        document.write(today.getDay()+"<br>");
+
+       //if문 말고, switch case 문으로
+       function Day(day){ //-------------->괄호안에 day만 적어도 됨
+      //var day = today.getDay(); //---->함수 변수 아닌 그냥 result 변수로 확인 해볼것
+        var result = "";
+        switch(day){
+            case 0:
+                result = "일요일";
+                break;
+            case 1:
+                result = "월요일";
+                break;    
+            case 2:
+                result = "화요일";
+                break;
+            case 3:
+                result = "수요일";
+                break;
+            case 4:
+                result = "목요일";
+                break;
+            case 5:
+                result = "금요일";
+                break;
+            case 6:
+                result = "토요일";
+                break;
+        }
+
+        document.write(result+"<br>");}
+        Day(today.getDay());
+         //다른날 다시 해볼것. 요일 바뀌는지
+
+       //요일정보를 숫자 -> 문자 변경하는 기능 구현(함수로 만들기)
+        //강사님 답이랑 비교해볼 것
+        
+        today.setFullYear(2000);
+        document.write(today.getFullYear()+"년<br>");
+
+        // 카타르 월드컵(2022/11/20) 개막일은 무슨 요일인가요?
+        var worldCup2022 = new Date("2022/11/20");
+        document.write("개막일의 요일: ");
+        Day(worldCup2022.getDay()); //위 함수를 이용해서 표현
+        document.write("<hr>");
+        //디데이=특정날짜 - 오늘날짜 (휴가일 구하기)
+        today = new Date();
+        var d_day = new Date("2023/8/10") ;
+        document.write("휴가까지 남은 날"+((d_day.getDate())-(today.getDate()))+"일<br>");
+        //이식은 31일 이상 남았을때는 사용불가, 월단위가 바뀌므로
+        //그냥 뺄셈하면 밀리세컨즈로 뺌. 1s = 1000ms/ 1m = 60*1000ms/ ih = 60*60*1000ms
+        //1d = 24*60*60*1000ms
+        document.write("휴가까지 남은 날"+(Math.ceil((d_day-today)/(24*60*60*1000))+"일<br>"));
+        //결과가 소숫점으로 나오므로 소숫점 올림하면 됨.
+    </script>
+
+    <h2>내장객체 - 배열(Array)</h2>
+    <p>
+        변수 -> 데이터를 1개만 저장<br>
+        배열 -> 데이터를 여러개 저장 (저장공간이 붙어있음)<br>
+    </p>
+    <script>
+        //배열 객체 
+        var arr = new Array(); //배열생선 -기본 (공간 할당)
+        var arr2 = new Array(10); //숫자만큼 배열공간 할당 (10칸짜리)
+        var arr3 = new Array(1,2,3,4,5,6); //1~6까지 저장하는 배열 생성
+        var arr4 = [1,2,3,4,5,6]; //특정 요소가 들어있는 배열 생성(대괄호사용)
+        //배열 정보 저장
+        // arr = 10; (x) 이건 변수일때 저장하는 방법
+        // 배열명[위치-(indext)] = 값; 
+        arr[0] = 10; // arr의 0번 위치에 10을 저장
+        //배열출력은 변수처럼 사용.
+        //1-20, 2-30, 3-40, 4-50
+        arr[1]= 20;
+        arr[2]= 30;
+        arr[3]= 40;
+        arr[4]= 50;
+        document.write("배열의 요소 출력"+arr[0]+"<br>");
+        document.write("배열의 요소 출력"+arr[1]+"<br>");
+        document.write("배열의 요소 출력"+arr[2]+"<br>");
+        document.write("배열의 요소 출력"+arr[3]+"<br>");
+        document.write("배열의 요소 출력"+arr[4]+"<br>");
+
+        for(let i=0;i<arr.length;i++){//배열의 길이만큼 계산
+            document.write("배열의 요소 출력"+arr[i]+"<br>");
+        }
+
+        //arr.length
+        //참조변수.속성(변수)
+        //for(let i=0;i<5;i++){
+       //     document.write("배열의 요소 출력"+arr[i]+"<br>");
+       // }
+
+       //배열 arr 들어있는 모든 요소의 합 출력
+        var sum = 0;
+       for(i=0; i<arr.length;i++){
+        sum+=arr[i];
+       }
+        document.write("arr배열의 모든 합: "+sum+"<br>" );
+        document.write("<hr>");
+
+        let numArr = [2,3,4,6,7,8,1,9];
+
+        document.write(numArr); //배열의 모든 요소들이 다 출력 됨.
+        document.write("<hr>");
+        document.write(numArr.join("@")); //요소사이에 @ 생김.
+        document.write("<br>");
+        document.write(numArr.sort()); //sort는 오름차순정렬
+        document.write("<hr>");
+        document.write(numArr.reverse()+"<br>"); //reverse 내림차순정렬
+
+        //numArr 배열안에 들어있는 홀수갯수 출력
+        let count = 0;
+        for(let i=0;i<numArr.length;i++){
+            if(numArr[i]%2==1){
+                count++;
+            }
+        }document.write("numArr의 홀수 갯수: "+count+"<br>");
+    </script>
+
+    <h2>내장객체 - 문자(String)</h2>
+    <p>
+        "" 또는 ''로 저장한 문자 데이터를 저장하는 객체<br>
+        문자객체는 배열이다.<br>
+        <mark>"Hello"</mark> => [H][e][l][l][o]<br>
+        let str = "Hello"; (문자형상수)<br>
+        let str2 = new String("Hello"); (문자객체)<br>
+    </p>
+    <script>
+        let str = "Hello";
+        for(let i=0;i<str.length;i++){
+            document.write(str[i]+"<br>");
+        }
+
+        document.write(str[3]+"<br>");
+        document.write(str[str.length-1]+"<br>");
+        //배열의 마지막 값
+        //배열의 처음값
+        document.write(str[0]);
+        document.write("<hr>");
+        let str3 = "ITWILL Busan";
+        document.write(str3);
+        document.write("<hr>");
+        document.write(str3.bold()+"<hr>");
+        document.write(str3.italics()+"<hr>");
+        document.write(str3.fontsize(10)+"<hr>"); //폰트 크기 조정
+        document.write(str3.fontcolor("red")+"<hr>"); //폰트 색상 조정
+        document.write(str3.fontsize(10).fontcolor("blue")+"<hr>")
+        //크기, 색상 같이 조정 가능. = 체이닝 기법
+        document.write(str3[7]);
+        document.write("<hr>");
+        document.write(str3.charAt(7));
+        document.write("<hr>");
+
+        //substring() slice(), substr() => 문자열 자르기 함수
+        //substrin(시작,끝-1): 시작부터 끝으로 지정한 숫자 앞까지 문자를 자름
+        //slice(시작, 끝-1): substring이랑 같음
+        //substr(시작,개수)
+
+        let juminNumber = "990202-1231234"
+        // 위 주민번호의 성별 출력
+        if(juminNumber[7]==1||juminNumber[7]==3){
+            document.write("성별은 남자");
+        }else if(juminNumber[7]==2||juminNumber[7]==4){
+            document.write("성별은 여자");
+        }else{
+            "잘못된 정보 입력!"
+         }
+         document.write("<hr>");
+
+         //indexOf("문자"), lastIndexOf("문자")
+         // 특정 문자가 포함되어 있으면 해당 위치 인텍스 리턴
+         // 포함되어있지 않으면 -1을 리턴
+         // let str3 = "ITWILL Busan"; 이 배열을 사용
+         document.write(str3.indexOf("s")+"<br>"); // s의 위치인 9를 출력함.
+         document.write(str3.indexOf("o")+"<br>"); // 없는 문자이므로 -1출력.
+
+         document.write(str3.lastIndexOf("L")+"<br>");
+         document.write(str3.indexOf("L")+"<br>");
+         //같은 L이라도 indexOf랑 다른 결과값 출력함.
+
+         //indexOf("문자"), lastIndexOf("문자")의 차이점
+         //indexOf는 가장 먼저 발견되는 문자 위치를 출력
+         //lastIndexOf는 가장 마지막에 발견되는 문자 위치 출력.
+
+         //split("구분자"): 입력한 문자가 사라지고, ,(콤마)가 입력됨.
+         //즉, 문자데이터를 분리해서 배열에 저장
+         //콤마를 기준으로 구분
+         document.write("<hr>");
+         document.write(str3.split(" "));
+         //ITWILL,Busan으로 출력되면서 배열을 저장공간을 둘로 나눔.
+         //콤마를 기준으로 뒤에 문자만 출력하고싶다면
+         document.write(str3.split(" ")[1]);
+         //이렇게하면 콤마기준으로 뒤 문자열이 Busan만 출력됨.
+        // document.write(str3.split("L"));
+         //문자가 몇개라도 ,(콤마)로 구분. ITWI,, Busan 출력
+
+         let phoneNumber = "010-1234-1234";
+         //=> "당첨: 010-****-1234" 로 출력되도록
+         document.write("당첨: "+phoneNumber.split("-")[0]+"-****-"+phoneNumber.split("-")[2]+"<br>");
+         document.write("<hr>");
+         //이메일주소 검증하기
+         //1. 주소에 @가 포함되어있는지 확인
+         //2. [".co.kr",".com",".net",".or.kr",".go.kr"]
+         //   =>문자들이 포함되어있을때만 정상적인 이메일로 판단
+         document.write("<hr>");
+         var emailarr = [".co.kr",".com",".net",".or.kr",".go.kr"];
+         //emailarr에 요소를 저장.
+         var checkEmail = "dkfis@dfsdfsdg.co.kr";
+         //이메일 형식의 변수 생성
+         if(checkEmail.indexOf("@") != -1){
+            for(let i=0; i<emailarr.length; i++){
+                if(checkEmail.indexOf(emailarr[i]) != -1){
+                    document.write("2단계 ok");
+                    break;
+                }}
+            } 
+            //반복문이라 else에 메일을 올바르게 입력하라고하면 다섯번 출력되므로 else문 안적는게 좋음
+
+
+      document.write("<hr>");
+         //아이디의 길이 최소 5자 이상이면서 @가 포함된 경우
+        //  if(checkEmail.indexOf("@")>5){
+        //     document.write
+        //  }
+
+        //숫자객체(Number)/ 수학객체(Math)
+        document.write(Number.MAX_VALUE); //JSP가 표현가능한 가장 큰 값
+        document.write("<br>");
+        document.write(Number.POSITIVE_INFINITY); //무한대 표기
+        document.write("<br>");
+        document.write(Number.NaN); //숫자가 아님.
+        document.write("<br>");
+
+        document.write(Math.PI); //파이값 출력
+        //Math.floor() 소숫점 버림, Math.ceil() 소숫점 올림
+
+        
+        
+
+    </script>
+
+    <form>
+        <input type ="email"> 
+        <!-- 이메일 형식의 입력칸을 만듦/ @가 없으면 이메일형식아니라고 뜸 -->
+    </form>
+</body>
+</html>

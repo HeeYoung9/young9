@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insertPro.jsp</title>
+</head>
+<body>
+
+<h1>insertPro.jsp</h1>
+
+<!-- 전달 정보 저장 -->
+<% 
+request.setCharacterEncoding("UTF-8");
+
+ String name = request.getParameter("name");
+ String gender = request.getParameter("gender");
+ int age = Integer.parseInt("age");
+ String ju1 = request.getParameter("ju1");
+ String ju2 = request.getParameter("ju2");
+ 
+	%>
+	
+이름: <%= name %> <br>
+나이: <%= age %> <br>
+성별: <%= gender %> <br>
+주민번호: <%= ju1 %> - <%=ju2 %> <br>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>cookieTest.jsp</title>
+</head>
+<body>
+
+<h1>cookieTest.jsp</h1>
+<h2> 클라이언트 (나) </h2>
+<%
+	//쿠키값 확인
+	
+	//쿠키 정보를 가져오기
+	request.getCookies();
+	
+	
+%>
+
+
+<input type="button" value="쿠키값 생성" onclick="location.href='cookieSet.jsp'">
+
+
+</body>
+</html>

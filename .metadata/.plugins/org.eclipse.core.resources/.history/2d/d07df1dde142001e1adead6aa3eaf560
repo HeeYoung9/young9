@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>cookieForm.jsp</title>
+</head>
+<body>
+
+<h1>cookieForm.jsp</h1>
+
+<!-- action속성값이 없을 경우 자신의 페이지 호출 -->
+
+<form action="cookiePro.jsp" method="get" >
+	<input type="radio" name="language" value="kor"> 한국어
+	<input type="radio" name="language" value="eng"> 영어 <br>
+	<input type="submit" value="언어설정">
+	
+</form>
+
+</body>
+</html>

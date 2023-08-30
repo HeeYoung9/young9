@@ -1,0 +1,47 @@
+
+8월 18, 2023 10:56:27.617 NEW SESSION
+8월 18, 2023 10:56:27.617 [0818/105627.553:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\諛� �씗�쁺\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\0d2ce0fa-79a3-443b-8659-c8cb5976e08c: 지정된 파일을 찾을 수 없습니다. (0x2)
+8월 18, 2023 10:56:27.625 [0818/105627.553:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\諛� �씗�쁺\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\2a1f37b5-6e75-48b8-ae8a-23777e10f281: 지정된 파일을 찾을 수 없습니다. (0x2)
+8월 18, 2023 10:56:27.625 [0818/105627.553:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\諛� �씗�쁺\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\0d2ce0fa-79a3-443b-8659-c8cb5976e08c: 지정된 파일을 찾을 수 없습니다. (0x2)
+8월 18, 2023 10:56:27.633 [0818/105627.553:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\諛� �씗�쁺\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\2a1f37b5-6e75-48b8-ae8a-23777e10f281: 지정된 파일을 찾을 수 없습니다. (0x2)
+8월 18, 2023 10:56:27.633 [0818/105627.553:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\諛� �씗�쁺\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\0d2ce0fa-79a3-443b-8659-c8cb5976e08c: 지정된 파일을 찾을 수 없습니다. (0x2)
+8월 18, 2023 10:56:27.633 [0818/105627.561:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\諛� �씗�쁺\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\2a1f37b5-6e75-48b8-ae8a-23777e10f281: 지정된 파일을 찾을 수 없습니다. (0x2)
+8월 18, 2023 10:56:27.633 [0818/105627.561:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\諛� �씗�쁺\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\2a1f37b5-6e75-48b8-ae8a-23777e10f281: 지정된 파일을 찾을 수 없습니다. (0x2)
+8월 18, 2023 10:56:27.633 [0818/105627.561:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\諛� �씗�쁺\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\0d2ce0fa-79a3-443b-8659-c8cb5976e08c: 지정된 파일을 찾을 수 없습니다. (0x2)
+8월 18, 2023 10:56:27.633 [0818/105627.561:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\諛� �씗�쁺\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\0d2ce0fa-79a3-443b-8659-c8cb5976e08c: 지정된 파일을 찾을 수 없습니다. (0x2)
+
+8월 24, 2023 14:22:08.204 NEW SESSION
+8월 24, 2023 14:22:08.204 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 24, 2023 14:34:30.741 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 24, 2023 15:16:45.283 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 24, 2023 15:17:29.400 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 24, 2023 16:20:57.483 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 24, 2023 17:23:56.327 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 24, 2023 17:51:35.576 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 24, 2023 19:32:33.637 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+8월 25, 2023 09:29:50.124 NEW SESSION
+8월 25, 2023 09:29:50.125 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 25, 2023 10:24:46.122 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 25, 2023 10:33:15.548 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 25, 2023 10:34:10.306 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+8월 25, 2023 10:35:57.23 NEW SESSION
+8월 25, 2023 10:35:57.23 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 25, 2023 10:36:34.485 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 25, 2023 10:36:51.43 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 25, 2023 10:37:34.97 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+8월 25, 2023 14:59:45.919 NEW SESSION
+8월 25, 2023 14:59:45.919 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 25, 2023 18:06:30.681 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+8월 28, 2023 09:20:48.925 NEW SESSION
+8월 28, 2023 09:20:48.925 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 28, 2023 10:07:45.913 [8796:11784:0828/100745.912:ERROR:device_event_log_impl.cc(222)] [10:07:45.912] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+8월 28, 2023 10:55:26.564 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 28, 2023 11:43:19.723 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 28, 2023 12:07:02.389 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+8월 28, 2023 16:35:53.729 NEW SESSION
+8월 28, 2023 16:35:53.729 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.

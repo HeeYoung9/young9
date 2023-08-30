@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insertForm.jsp</title>
+</head>
+<body>
+
+<h1> /jdbc/insertForm.jsp </h1>
+
+<h2> 사용자가 정보를 입력하는 페이지</h2>
+
+<fieldset>
+<form action ="">
+
+	이름: <input> <br>
+	성별: <input> <br>
+	나이: <input> <br>
+	주민번호: <input>-<input> <br>
+	
+	<input type="submit" value="전달">
+	
+</form>
+</fieldset>
+</body>
+</html>

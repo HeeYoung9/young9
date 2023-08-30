@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>cookiePro.jsp</title>
+</head>
+<body>
+
+<h1> cookiePro.jsp </h1>
+
+<%
+	//쿠키를 통해서 언어 설정 (파라메터 사용)
+	//String lang = request.getParameter("language");
+	//Cookie cookie = new Cookie("lang",lang);
+	// 위에 식도 같은 말이지만, 아래 식이 더 유용함.
+	
+	Cookie cookie = new Cookie("lang",request.getParameter("language"));
+	
+	//쿠키 사용 설정(유효기간)
+	cookie.setMaxAge(60*60); //1시간
+	
+	//쿠키정보를 클라이언트로 전달
+	response.addCookie(cookie);
+	
+%>
+
+<script type="text/javascript">
+	
+	alert("언어정보 쿠키 완료!");
+	location.href="cookieForm.jsp";
+	
+	
+</script>
+</body>
+</html>

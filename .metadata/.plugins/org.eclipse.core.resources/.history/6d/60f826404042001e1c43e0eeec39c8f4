@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sessionLoginPro</title>
+</head>
+<body>
+
+<h1>sessionLoginPro.jsp</h1>
+<h2> 전달받은 로그인 정보 처리 </h2>
+
+<%
+	//전달한 정보 저장(id, pw)
+	
+	
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+	
+	System.out.println("아이디 : "+id+", PW : " +pw);
+	
+	//2) 로그인정보 처리 (admin/1234) 같은지 확인
+	%>
+</body>
+</html>

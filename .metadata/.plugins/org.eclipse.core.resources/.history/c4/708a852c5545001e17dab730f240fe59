@@ -1,0 +1,72 @@
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="com.mysql.cj.xdevapi.PreparableStatement"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insertPro.jsp</title>
+</head>
+<body>
+
+<h1>insertPro.jsp</h1>
+
+<!-- 전달 정보 저장 -->
+<% 
+ request.setCharacterEncoding("UTF-8");
+
+ String name = request.getParameter("name");
+ String gender = request.getParameter("gender");
+ int age = Integer.parseInt(request.getParameter("age"));
+ String ju1 = request.getParameter("ju1");
+ String ju2 = request.getParameter("ju2");
+ 
+ String jumin = ju1 + "-" + ju2;
+ 
+	%>
+	
+이름: <%= name %> <br>
+나이: <%= age %> <br>
+성별: <%= gender %> <br>
+주민번호: <%=jumin %> <br>
+
+
+<h2> 전달받은 정보를 DB(Mysql)로 전달</h2>
+<%
+	//1. 드라이버 로드
+
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	System.out.println("드라이버 로드 성공!");
+	
+	//2. 디비 연결
+	
+	Connection con = 
+	DriverManager.getConnection("jdbc:mysql://localhost:3306/jspdb", "root", "1234");
+	System.out.println("디비 연결 성공!");
+	System.out.println("con : "+con);
+	
+	//3. sql구문 작성 &stmt 객체
+	
+	String sql = 
+	"insert into itwill_member(idx, name, gender, age, jumin) values(null, '"+name+"','"+ gender+"', '"+age+"', '"+jumin+"')";
+	
+	//Statement stmt = con.createStatement();
+	PreparedStatement pstmt = con.prepareStatement(sql);
+	
+	//4. sql 실행
+	
+	
+	//선언된 변수명을 sql의 변수에서 사용하려면 '"+변수명+"' 으로 사용하면 됨. 
+	
+	//stmt.execute(sql);
+	pstmt.executeUpdate();
+	System.out.println("회원 정보 저장 완료!");
+	
+%>
+
+</body>
+</html>

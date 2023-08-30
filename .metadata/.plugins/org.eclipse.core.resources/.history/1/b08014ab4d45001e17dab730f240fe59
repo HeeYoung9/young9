@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insertPro.jsp</title>
+</head>
+<body>
+
+<h1>insertPro.jsp</h1>
+
+<!-- 전달 정보 저장 -->
+<% 
+request.setCharacterEncoding("UTF-8");
+
+ String name = request.getParameter("name");
+	%>
+	
+이름: <%= name %>
+나이:
+성별:
+주민번호:
+</body>
+</html>

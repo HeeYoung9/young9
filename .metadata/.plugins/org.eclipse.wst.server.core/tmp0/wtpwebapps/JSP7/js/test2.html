@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>test2.html</h1>
+
+    <h2>자바스크립트 특징</h2>
+    <h3>1. 인터프린터 언어(<->컴파일 언어 ex.java)</h3>
+    <!-- // 컴파일: 고급언어를 저급언어로 변경하는 것. -->
+
+    <p> 코드를 위에서 아래로 순차적으로 실행.
+        에러가 발생하기 전까지만 실행.
+        에러 발생하면 더이상 코드를 실행하지 않음.
+    </p>
+    <h3>2. 클라이언트 (스크립트) 언어</h3>
+    <p>
+        클라이언트(컴퓨터, 휴대폰..)에서 실행되는 언어(스마트폰의 등장)
+    </p>
+    <h3>3. 객체 기반 언어</h3>
+    <h3>4. 오픈소스 기반의 언어</h3>
+    <h3>5. 다양한 라이브러리 지원 </h3>
+    <hr>
+    <h3>작성 규칙</h3>
+    <h3>1. 대소문자 구분하여 작성(Date vs date 다름)</h3>
+    <h3>2. 모든 코드(실행문)의 끝에는 ;(세미콜론)을 작성</h3>
+    <h3>3. 코드를 작성할때 한번에 한줄씩 작성</h3>
+    <h3>4. 문자 표시할때 ""/ ''를 구분해서 사용X</h3>
+    <h3>5. [대괄호], {중괄호}, (소괄호)는 항상 짝이 맞아야 함 (열고닫기)</h3>
+    <h3>6. 기본적으로 코드는 키보드로 수행가능해야함</h3>
+
+    <hr>
+    <script>
+        //출력문
+        //1. alert(''); 안에 메시지를 넣은대로 팝업창 뜸 ex. alert('안녕하세요')
+        //2. document.write(); 바디에 내용을 작성한것과 같음. 명령 태그 적용 가능.
+        //ex) document.write('안녕하세요 아이티윌 입니다.'); 사칙연산도 가능함.
+        //3. console.log();
+        console.log('안녕하세요!');
+        //ex) consol.log('안녕하세요!'); F12눌러서 시스템툴에서 확인 가능함(콘솔)
+        //4. 출력문을 사용하여 페이지에 이름 출력
+        document.write("이름: 박희영<br>");
+        document.write("<h1>이름: 박희영</h1>");
+        document.write(100+200);
+        document.write("<br>")
+        //숫자+(연산자)숫자 = 숫자, 문자+(연결자)문자 = 문자(연결)
+        document.write("100"+"200");
+        document.write("<br>")
+        //문자+숫자 = 문자
+        //문자+A = 문자 (A타입이 무엇이든간에)
+        //문자+숫자+숫자+A = 문자
+        document.write("100"+200);
+        document.write("<br>")
+        document.write("100"+200+300);
+        document.write("<br>")
+        document.write(100+400+"500");
+        //연산은 괄호 다음으로는 왼쪽부터 연산됨. 숫자+숫자+문자= 숫자+문자=문자
+    </script>
+    <hr>
+    <h2>변수(variables): 데이터 하나를 저장하는 공간(메모리)</h2>
+    <>변수 사용 방법 <br>
+        1)변수 선언: *var 변수명/ let 변수명/ const 변수명 <br>
+        2)변수 초기화: <br>
+        3)변수 사용<br>
+        <!-- Shift+enter = <br> 단축키 -->
+        <!-- 스크립트 명령내 내용아니면 html 내용임 -->
+        <script>
+            //변수 선언
+            // java에선 [데이터타임]+변수명;
+            //=>JavaScript데이터타입: 문자형(String), 숫자(Number), 논리형(Boolean), Null
+            //자바스크립트는 데이터타입에 따라 변수 선언 형태[var]가 바뀌지 않음
+            //변수명: 한글사용x, 영문과 숫자의 조합(특수문자_,$)
+            //변수명은 가능하면 의미 있는 단어 사용할 것 (누구나 유추할 수 있도록)
+            //카멜표기법: 최소 두개 이상의 단어를 결합하여 작성시 두번째 단어의 첫글자를 대문자로 표기
+                      // ex) appleBox, javaScript
+            //문자데이터 타입: "", ''사용하여 정보를 저장
+            var p;
+            p="<h1>박희영</h1>"
+            document.write(p);
+            var itwill;
+            //변수 초기화
+            itwill = 1000;
+            //변수 사용
+            document.write('변수:'+itwill);
+
+            //숫자데이터: 숫자정보 저장(실수, 정수)
+            var tmpValue= 100;
+            var tmpValue2= '100';
+            document.write("<br>");
+            document.write (tmpValue+200);
+            document.write("<br>");
+            document.write (tmpValue2+200);
+            document.write("<br>");
+            document.write(typeof tmpValue);
+            document.write("<br>");
+            document.write(typeof tmpValue2);
+
+            //논리데이터: true(참)/ false(거짓)을 표시하는 데이터 => 변수값이 없음
+
+            //null(값이 없음)/ undefined(정의x)
+            var a; //undefined (값이 있는지 없는지 모름)/ 초기화 안함
+            var b = null; // 변수는 null값 (값이 없음)/ 초기화 함
+            document.write("<br>");
+            document.write(typeof a);
+            document.write("<br>");
+            document.write(typeof b);
+        </script>
+        <hr>
+        <h1>연산자</h1>
+        <h2>1) 산술연산자 (+ - / * %)</h2>
+        <script>
+            var num1 = 10;
+            var num2 = 4;
+            document.write('+:'+(num1+num2)+"<br>");
+            document.write('-:'+(num1-num2)+"<br>");
+            document.write('/:'+(num1/num2)+"<br>");
+            document.write('*:'+(num1*num2)+"<br>");
+            document.write('%:'+(num1%num2)+"<br>");
+
+            //Q. 과일(50개)를 상자에 담으려고한다.
+            //   이때 상자의 크기는 한번에 5개씩 저장 가능.
+            //   필요한 상자의 갯수는?
+
+            var f= 50 //변수명을 더 과일 이름 다운걸로 변경하면 좋음.
+            var B = 5 //sizeOfBox로 변수명을 저장하면 5개담을 수 있는 상자라고 인식 가능
+            document.write('필요한 상자 갯수:'+(f/B)+"상자<br>")
+
+            //Q. 895 -> ???? -> 800 이떄 ???에 들어갈 식은?
+            //   472 -> ???? -> 400
+            //   123 -> ???? -> 100
+            //   952 -> ???? -> 900 (확인) /버림
+            var number = 952;
+            document.write( Math.floor(number/100)*100+"<br>");
+            //소수점 버림 Math.floor
+
+            //Q. 856 -> ??? -> 851 일때 999의 값은?
+            var num = 999;
+            document.write(Math.floor(num/10)*10+1);
+        </script>
+        <h2>대입연산자(=대입): 연산의 방향(오른쪽->왼쪽)</h2>
+        <h2>복합 대입연산자 (+= -+ *= /= %=)</h2>
+
+        <script>
+            // A=B; (대입)
+            // A+=B; (복합) => A= A+B; (누적연산)
+            // A-=B; (복합) => A= A-B; (누적연산)
+            // A*=B; (복합) => A= A*B; (누적연산)
+            // A/=B; (복합) => A= A/B; (누적연산)
+            // A%=B; (복합) => A= A%B; (누적연산)
+
+            document.write(num1+=num2);
+
+           var tag = "<table border='1'>";
+           tag += "<tr>"
+           tag += "<td>1</td>"
+           tag += "<td>2</td>"
+           tag += "</tr>"
+           tag += "</table>"
+           document.write(tag);
+           </script>
+
+           <table border="1">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+           </table>
+
+        <h2>3. 증감연산자(++A, A++, --A, A--): 데이터를 1씩 증가/감소</h2>
+        <script>
+            var A = 100;
+            ++A; //101
+            A++; //101
+            A; //102
+            A= 100;
+            document.write("A:"+A+"<br>")
+            ++A; //101 전위연산: 변수를 사용할때 숫자를 1 증가후 사용.
+            document.write("A:"+A+"<br>")
+            A++; //101 후위연산: 변수를 사용할때 그냥 사용후 1증가.
+            document.write("A:"+A+"<br>") //102
+        </script>
+
+        <h2>4. 비교연산자</h2>
+        <p>
+            [>, <, >=, <=, ==, !=, ===, !== ] <br>
+            피연산자 2개를 사용해서 값을 비교후 결과를 참/거짓 형태 리턴
+        </p>
+        <script>
+            var val1 = 10;
+            var val2 = 20;
+            document.write("val1 > val2 : " +(val1 > val2)+"<br>");
+            document.write("val1 > val2 : " +(val1 < val2)+"<br>");
+            document.write("val1 == val2 : " +(val1 == val2)+"<br>");
+            document.write("val1 != val2 : " +(val1 != val2)+"<br>");
+            
+            val1 = 10;
+            val2 = "10";
+            document.write("val1 == val2 : " +(val1 == val2)+"<br>");
+            //타입 상관없이 값만 비교할때 사용.
+            document.write("val1 === val2 : " +(val1 === val2)+"<br>");
+            document.write("val1 !== val2 : " +(val1 !== val2)+"<br>");
+
+            document.write(("A" >"B")+"<br>");
+            document.write("JavaScript" > "javaScript");
+            document.write("javascript" > "javaScript");
+        </script>
+        
+        <h2>5. 논리연산자: true/false를 사용해서 연산</h2>
+        <p>
+        &&(AND) ||(OR) !(NOT) <hr>
+        </p>
+        <script>
+            var T = true;
+            var F = false;
+
+            document.write("T<hr>")
+            document.write("T && T :"+(T && T)+"<br>")
+            document.write("T && F :"+(T && F)+"<br>")
+            document.write("F && F :"+(F && F)+"<br>")
+            document.write("F && T :"+(F && T)+"<br>")
+
+            document.write("<hr>");
+            document.write("T || T :"+(T && T)+"<br>")
+            document.write("T || F :"+(T && F)+"<br>")
+            document.write("F || F :"+(F && F)+"<br>")
+            document.write("F || T :"+(F && T)+"<br>")
+
+            document.write("<hr>");
+
+        </script>
+
+        <h2>6.삼항(조건)연산자 </h2>
+        <p>
+            [ 조건식? 값1(참):값2(거짓)]
+            조건식의 결과에 따른 실행결과를 변화가능
+        </p>
+        <script>
+            var A = 100;
+            var B = 200;
+
+            // A,B 비교해서 A가 클때 "A값이 더 크다", B가 클때 "B값이 더 크다"
+            document.write(A>B? "A값이 더 크다":"B값 더 크다");
+
+            document.write("<br>");
+
+            //Q. 과일(53개)을 상자에 담으려고 한다.
+            //   이때 상자의 크기는 한번에 5개씩 저장가능
+            //   모든 과일을 포장할때 필요한 상자의 개수는?
+
+            var apple = 53;
+            var boxSize = 5;
+
+            document.write("상자 갯수는 "+Math.ceil(apple/boxSize)+"상자");
+            //이건 내가 쓴 답
+            document.write("<br>");
+
+            //나머지가 있을때, 없을때로 구분해야 함.
+            document.write("상자 갯수는 "+Math.floor(apple/boxSize+1)+"상자");
+            //배운거 활용한 것
+            document.write("<br>");
+            document.write("상자 갯수는 "+(Math.floor(apple/boxSize)+(apple%boxSize>0? 1:0))+"상자");
+            //삼항연산자 사용
+
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

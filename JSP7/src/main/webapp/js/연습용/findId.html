@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 찾기 화면</title>
+</head>
+<body>
+    아이디 찾기
+    <fieldset>
+        <legend>아이디 찾기</legend>
+        <form action="findPw.html" method="get" name="hy" onsubmit="return fn1();">
+            ID <input type="text" name="id">
+            <hr>
+            찾기 방법 <br>
+            <input type="radio" name="way" value="전화번호">전화번호
+            <input type="radio" name="way" value="주민등록번호">주민등록번호
+            <input type="radio" name="way" value="이메일">이메일
+            <input type="radio" name="way" value="아이핀">아이핀
+
+            <input type="submit" value="확인">
+        </form>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>test4.html</h1>
+    <h2>반복문(for, while, do-while)</h2>
+    <script>
+    //    for(초기식;조건식;증감식){
+    //         반복할 코드(조건식이 참일때)
+    //    }
+    //숫자출력 (1~10)
+    for(var i=1; i<=10; i++){
+        document.write(i+" ");
+    }
+    document.write("<hr>")
+    //숫자 11~25
+    for(var i=11; i<=25; i++){
+        document.write(i+" ");
+    }
+    for(var i=0; i<10; i++){
+        document.write(i+" ");
+    }
+    document.write("<hr>")
+    for(var i=10; i>0; i--){
+        document.write(i+" ");
+    }
+    document.write("<hr>")
+    //1~10숫자중 홀수만 출력
+    for(var i=1; i<10; i+=2){
+        document.write(i+" ");
+    }
+    document.write("<hr>")
+    //짝수만 출력
+    for(var i=2; i<=10; i+=2){
+        document.write(i+" ");
+    }
+    document.write("<hr>")
+    //구구단 출력
+    // 2단 출력
+    // 2*1 = 2, 2*2 = 4 .....
+    var dan = 2;
+    document.write("["+dan+"단 ]<br>")
+    for(var i=1; i<10; i++){
+        document.write(dan + " * " +i+"="+(dan*i)+"<br>");
+    }
+    document.write("<hr>")
+    //누적합 A+=B <-> A=A+B
+    //1~10까지 숫자의 합 출력
+    var sum = 1
+    for(var i=2; i<11; i++){
+        sum+=i;
+    }
+    document.write("1부터 10까지의 합: "+sum+"<br>");
+
+        //while문
+        // 초기식;
+        // while(조건식){
+        //     반복할 코드;
+        //     증감식;
+        // }
+        document.write("<hr>")
+        //1~10 출력
+        var i = 1
+        while(i<=10){
+            document.write(i+ " ");
+            i++;
+        }
+        document.write("<hr>")
+        //20~1까지 출력
+        var i = 20
+        while(i>0){
+            document.write(i + " ");
+            i--;
+        }
+        document.write("<hr>")
+        //누적합 1~100까지의 누적합
+        var sum =0;
+        var i =1;
+        while(i<=100){
+            sum+=i;
+            i++;
+        }
+        document.write("1~100까지의 누적합 : "+sum+"<br>");
+        document.write("<hr>")
+        //do-while문
+        // 초기식;
+        // do{
+        //     반복할코드;
+        //     증감식;
+        // }while(조건식);
+
+        //1~10까지 숫자중 홀수만 출력
+        var i = 1;
+        do{
+            document.write(i+" ");
+            i+=2;
+        }while(i<=10);
+        document.write("<hr>")
+        // for(초기식; 조건식; 증감식){
+        //     반복할 코드 실행문;
+        //     제어문(if-else)
+        // }
+
+        //1~10까지의 숫자중에서 홀수, 짝수의 합을 각각 계산
+            
+        var odd_sum = 0;
+        var even_sum = 0;
+        for(var i=1; i<=10; i++){
+            if(i%2 != 0){
+                odd_sum+=i;
+            }else{even_sum+=i;
+
+            }
+        }
+        document.write("홀수합:"+odd_sum+"<br>");
+        document.write("짝수합:"+even_sum+"<br>");
+
+        // 중첩 for문(이중 for문/다중 for문)
+        // for(초기식; 조건식; 증감식){//out
+        //     반복할 코드
+        //     for(초기식; 조건식; 증감식){//in
+        //         반복할 코드;
+        //     }
+        //     반복할 코드;
+        // }
+
+        //중첩 for문을 사용해서 9시 0분~ 10시 0분까지 출력
+        for(var h=9; h<10; h++){
+            for(var m=0; m<=60; m++){
+                if(m==60){
+                    document.write((h+1)+"시 "+ 0+"분<br>")
+                } else{document.write(h+"시 "+m+"분<br>")}
+            }
+        }
+
+        //Q. 구구단 출력
+        for(var dan=2; dan<10; dan++){
+            document.write("["+dan+"단]<br>");
+            for(var i=1; i<10; i++){
+            document.write(dan+" * "+i+"="+(dan*i)+"<br>");
+            }
+                }
+        document.write("<hr>");
+
+        //구구단 가로 출력
+
+        //1번 가로
+        for(var dan=2; dan<10; dan++){
+            document.write("<br>["+dan+"단]");
+            for(var i=1; i<10; i++){
+            document.write(dan+" * "+i+"="+(dan*i)+" ");
+            }
+                }
+        document.write("<hr>");
+
+        //2번 가로
+        for(var dan=2; dan<10; dan++){
+            document.write(" ["+dan+"단] ");
+            }
+        document.write("<br>");
+        for(i=1; i<=9; i++){
+            for(dan=2; dan<=9; dan++){
+                document.write("("+dan+"*"+i+"="+(dan*i)+")");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<hr>");
+
+        var num = 1;
+        var tag = "<table border='1'>";
+            tag+="<tr>";
+                for(var r=2; r<=9; r++){
+                    tag+="<th>"+r+"단"+"<th>";
+                }
+                tag+="<tr>";
+            tag+="<tr>";
+        for(var r=1; r<=9; r++){
+            for(var dan=2; dan<=9; dan++)
+            tag+="<td>"+dan+"*"+r+"="+(dan*r)+"<td>";
+        }   document.write("<br>");
+            tag+="<tr>";
+            tag+="</table>"; //다시 확인해 볼것
+            
+        document.write(tag);
+
+        document.write("<hr>");
+        
+    //테이블 숫자표 출력
+    </script>
+    <table border="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+
+    </table>
+    <script>
+        // var tag = "<table border='1'>"
+        //     tag+="<tr>"
+        //     tag+="<td>1</td>"
+        //     tag+="<td>2</td>"
+        //     tag+="<td>3</td>"
+        //     tag+="</tr>"
+        //     tag+="<tr>"
+        //     tag+="<td>4</td>"
+        //     tag+="<td>5</td>"
+        //     tag+="<td>6</td>"
+        //     tag+="</tr>"
+        //     tag+="<tr>"
+        //     tag+="<td>7</td>"
+        //     tag+="<td>8</td>"
+        //     tag+="<td>9</td>"
+        //     tag+="</tr>"
+        //     tag+="<tr>"
+        //     tag+="<td>10</td>"
+        //     tag+="<td>11</td>"
+        //     tag+="<td>12</td>"
+        //     tag+="</tr>"
+        //     tag+="<tr>"
+        //     tag+="<td>13</td>"
+        //     tag+="<td>14</td>"
+        //     tag+="<td>15</td>"
+        //     tag+="</tr>"
+        // tag+="</table>"
+        // document.write(tag); 
+        var num = 1;
+        var tag = "<table border='1'>";
+        for(var r=1; r<=5; r++){
+            tag+="<tr>";
+            for(var c=1; c<=3; c++){
+                tag+="<td>"+num+"</td>";
+                num++;
+            }
+            tag+="</tr>";
+        }
+        tag +="</table>"
+        document.write(tag);
+
+
+        document.write("<hr>");
+
+        //Q. 특정 숫자 찾기 (무한루프 연습)
+
+        //0.0< Math.random() < 1.0 0과 1사이의 랜덤숫자를 출력하는 식.
+        //0.0< Math.random()*10 < 10.0 0과 10사이의 랜덤숫자를 출력하는 식.
+        //Math.random()은 실수형 데이터타입을 랜덤으로 출력하는 내장함수.
+        let Quiz = Math.floor(Math.random()*100)+1; 
+        document.write("Q :" + Quiz + "<br>");
+
+        //prompt 사용자 숫자 입력
+        //-> 정답을 찾을때까지 수행.
+        // 힌트: 오답일 경우 입력값과 정답의 크기비교 (누가 더 큰지 체크)
+        //       입력>정답 => "더 작은값을 입력"
+        //       입력<정답 => "더 큰값을 입력"
+        //       입력==정답 => "정답(횟수:00회)"
+
+        let cnt  = 0;
+        for(;;){
+            let input = prompt("1~100 값을 입력하세요!");
+            cnt++;
+            let Quiz = Math.floor(Math.random()*10)+1;
+            if(input>Quiz){
+                alert("더 작은 값을 입력!");
+            }else if(input<Quiz){
+                alert("더 큰 값을 입력!");
+            }else if(input==Quiz){
+                alert("정답!(도전횟수"+cnt+")");
+                break;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
